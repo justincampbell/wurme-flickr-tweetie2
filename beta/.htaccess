@@ -1,0 +1,21 @@
+# -FrontPage-
+
+IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
+
+RewriteEngine	On
+RewriteRule		^about?$ about.php
+RewriteRule		^include(.*)?$ / [F]
+RewriteRule		^([a-zA-Z1-9])(/)?$ image/$1.jpg [L]
+
+<Limit GET POST>
+order deny,allow
+deny from all
+allow from all
+</Limit>
+<Limit PUT DELETE>
+order deny,allow
+deny from all
+</Limit>
+AuthName wur.me
+AuthUserFile /home/wurme/public_html/_vti_pvt/service.pwd
+AuthGroupFile /home/wurme/public_html/_vti_pvt/service.grp
